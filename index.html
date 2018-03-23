@@ -3,10 +3,24 @@
 	<head>
 	    <meta charset="utf-8">
 	</head>
+	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script>
+	  $('a').click(function() {
+	      var ifr = document.createElement('iframe');
+	          ifr.src = 'fs://an-yugusoft.com';
+	          ifr.style.display = 'none';
+
+	      document.body.appendChild(ifr);
+	      setTimeout(function(){
+	          document.body.removeChild(ifr);
+	      }, 3000);
+	  });
+	</script>
 	<body>
 		<div>
-			<a href="fs://an-yugusoft.com/" target="_blank">Android打开app</a>
-			<a href="fs://yugusoft.com/" target="_blank">iOS打开app</a>
+			<a href="fs://an-yugusoft.com/">Android打开app</a>
+			<a href="fs://yugusoft.com/">iOS打开app</a>
 		</div>
 	</body>
 </html>

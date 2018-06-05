@@ -37,11 +37,15 @@ onPlayEnd: function(){ /*your code*/ }
 });
 
 function playVideo(){
+	alert("sungx playVideo start")
 	player.playVideo();
+	alert("sungx playVideo end")
 }
 
 function pauseVideo(){
+	alert("sungx pauseVideo start")
 	player.pauseVideo();
+	alert("sungx pauseVideo end")
 }
 
 function seekTo(s){
@@ -49,6 +53,7 @@ function seekTo(s){
 }
 
 function currentTime(){
+	alert("sungx currentTime start")
 	var currentTIme = player.currentTime();
 	alert(currentTIme)
 }

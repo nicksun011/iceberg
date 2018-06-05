@@ -1,6 +1,9 @@
 <html>
 	<body>
 		<div id="youkuplayer" style="width:480px;height:400px"></div>
+		<button onclick="playVideo()">播放</button>
+		<button onclick="pauseVideo()">暂停</button>
+		<button onclick="currentTime()">获取时间</button>
 	</body>
 	<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
 
@@ -20,11 +23,11 @@ autoplay: true,
 
 events:{
 onPlayerReady: function(){ 
-	console.log("onPlayerReady")
+	alert("onPlayerReady")
  },
 
 onPlayStart: function(){ 
-	console.log("sungx onPlayStart")
+	alert("sungx onPlayStart")
  },
 
 onPlayEnd: function(){ /*your code*/ }
@@ -46,13 +49,9 @@ function seekTo(s){
 }
 
 function currentTime(){
-	console.log("currentTime")
-	return player.currentTime();
+	var currentTIme = player.currentTime();
+	alert(currentTIme)
 }
-
-setTimeout(()=>{
-		console.log(this.currentTime())
-	},10000)
 
 </script>
 </html>

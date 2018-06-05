@@ -1,26 +1,58 @@
-<!DOCTYPE html>
 <html>
-	<head>
-	    <meta charset="utf-8">
-	</head>
-	<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
-	</script>
-	<script>
-	  $('a').click(function() {
-	      var ifr = document.createElement('iframe');
-	          ifr.src = 'fs://an-yugusoft.com';
-	          ifr.style.display = 'none';
-
-	      document.body.appendChild(ifr);
-	      setTimeout(function(){
-	          document.body.removeChild(ifr);
-	      }, 3000);
-	  });
-	</script>
 	<body>
-		<div>
-			<a href="fs://an-yugusoft.com/">Android打开app</a>
-			<a href="fs://yugusoft.com/">iOS打开app</a>
-		</div>
+		<div id="youkuplayer" style="width:480px;height:400px"></div>
 	</body>
+	<script type="text/javascript" src="http://player.youku.com/jsapi"></script>
+
+<script type="text/javascript">
+
+var player = new YKU.Player('youkuplayer',{
+
+styleid: '0',
+
+client_id: '3fc1f8cf87cbb8b2',
+
+vid: 'XMzU4MjY1ODU2OA==',
+
+newPlayer: true,
+
+autoplay: true,
+
+events:{
+onPlayerReady: function(){ 
+	console.log("onPlayerReady")
+ },
+
+onPlayStart: function(){ 
+	console.log("sungx onPlayStart")
+ },
+
+onPlayEnd: function(){ /*your code*/ }
+
+}
+
+});
+
+function playVideo(){
+	player.playVideo();
+}
+
+function pauseVideo(){
+	player.pauseVideo();
+}
+
+function seekTo(s){
+	player.seekTo(s);
+}
+
+function currentTime(){
+	console.log("currentTime")
+	return player.currentTime();
+}
+
+setTimeout(()=>{
+		console.log(this.currentTime())
+	},10000)
+
+</script>
 </html>
